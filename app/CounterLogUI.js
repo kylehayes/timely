@@ -17,7 +17,14 @@ define(
 
       // custom functions
       this.onCounterMark = function(event, data) {
-        this.select('logListContainer').append('<li>' + data.time + '</li>');
+        console.log(data);
+        var logStr = '<li>' + data.time;
+        if(data.message !== null) {
+          logStr += " -- " + data.message;
+        }
+        logStr += "</li>";
+        this.select('logListContainer').append(logStr);
+        this.node.scrollTop = this.node.scrollHeight;
       };
 
       // init component

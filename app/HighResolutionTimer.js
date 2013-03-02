@@ -7,6 +7,10 @@ define(
     return defineComponent(HighResolutionTimer);
 
     function HighResolutionTimer() {
+      /******
+       * Adapted from tanepiper
+       * https://gist.github.com/tanepiper/4215634
+       */
 
       this.defaultAttrs({
         duration: 1000

@@ -25,18 +25,27 @@ define(
       // custom functions
       this.onStartButtonClick = function(event) {
         this.trigger(document, "counter#start");
+        this.mark("Start");
         this.$startButton.hide();
         this.$stopButton.show();
       };
 
       this.onStopButtonClick = function(event) {
         this.trigger(document, "counter#stop");
+        this.mark("Stop");
         this.$stopButton.hide();
         this.$startButton.show();
       };
 
       this.onMarkButtonClick = function(event) {
-        this.trigger(document, "counter#mark", {time: this.select('clockSelector').html()});
+        this.mark();
+      };
+
+      this.mark = function(msg) {
+        this.trigger(document, "counter#mark", {
+          time: this.select('clockSelector').html(),
+          message: msg == undefined ? null : msg
+        });
       };
 
       this.onCounterChanged = function(event, data) {

@@ -8,6 +8,28 @@
   <script src='components/es5-shim/es5-sham.js'></script>
   <script data-main="requireMain.js" src='components/requirejs/require.js'></script>
   <style type="text/css">
+  .container-fluid {
+    margin: 10px;
+    border: 1px solid gray;
+    padding: 0;
+  }
+
+  #counterLogUI {
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    overflow: scroll;
+  }
+
+  #counterUI {
+    border-right: 1px solid gray;
+    margin: 0px;
+  }
+
+  #notesUI {
+    border-left: 1px solid gray;
+    margin: 0px;
+  }
+
   #clock {
     font-size: 45px;
     font-family: 'Arial Black';
@@ -30,7 +52,7 @@
           <button id="markCounter" class="btn btn-large">Mark</button>
         </div>
       </div><!-- end span4 -->
-      <div class="span9">
+      <div id="notesUI" class="span9">
         <div class="row-fluid"><p>notes</p></div>
       </div><!-- end span8 -->
 
