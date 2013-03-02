@@ -25,6 +25,10 @@
     margin: 0px;
   }
 
+  #counterUI .counter-wrapper {
+    margin: 10px;
+  }
+
   #notesUI {
     border-left: 1px solid gray;
     margin: 0px;
@@ -46,10 +50,12 @@
           <ol id="counterLogListContainer"></ol>
         </div>
         <div id="counterUI" class="row-fluid">
-          <div id="clock">00:00:00</div>
-          <button id="startCounter" class="btn btn-large btn-primary">Start</button>
-          <button id="stopCounter" class="btn btn-large btn-danger" style="display: none">Stop</button>
-          <button id="markCounter" class="btn btn-large">Mark</button>
+          <div class="counter-wrapper">
+            <div id="clock">00:00:00</div>
+            <button id="startCounter" class="btn btn-large btn-primary">Start</button>
+            <button id="stopCounter" class="btn btn-large btn-danger" style="display: none">Stop</button>
+            <button id="markCounter" class="btn btn-large">Mark</button>
+          </div>
         </div>
       </div><!-- end span4 -->
       <div id="notesUI" class="span9">
