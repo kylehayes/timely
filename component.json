@@ -1,0 +1,9 @@
+{
+  "name": "timely",
+  "version": "1.0.0",
+  "dependencies": {
+    "flight": "~1.0.0",
+    "requirejs": "stable",
+    "bootstrap": "stable"
+  }
+}

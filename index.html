@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Timely</title>
+  <link rel="stylesheet" href="components/bootstrap/bootstrap/css/bootstrap.min.css" />
+  <script src='components/jquery/jquery.js'></script>
+  <script src='components/es5-shim/es5-shim.js'></script>
+  <script src='components/es5-shim/es5-sham.js'></script>
+  <script data-main="requireMain.js" src='components/requirejs/require.js'></script>
+  <style type="text/css">
+  #clock {
+    font-size: 45px;
+    font-family: 'Arial Black';
+    line-height: 45px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+      <div class="span3">
+        <div id="counterLogUI" class="row-fluid">
+          <ol id="counterLogListContainer"></ol>
+        </div>
+        <div id="counterUI" class="row-fluid">
+          <div id="clock">00:00:00</div>
+          <button id="startCounter" class="btn btn-large btn-primary">Start</button>
+          <button id="stopCounter" class="btn btn-large btn-danger" style="display: none">Stop</button>
+          <button id="markCounter" class="btn btn-large">Mark</button>
+        </div>
+      </div><!-- end span4 -->
+      <div class="span9">
+        <div class="row-fluid"><p>notes</p></div>
+      </div><!-- end span8 -->
+
+    </div>
+  </div>
+  <script>
+  require(
+  [
+    'components/flight/lib/logger',
+    'components/flight/tools/debug/debug'
+  ],
+
+    function(withLogging, debug) {
+      debug.enable(true);
+      require(['app/boot/page'], function(initialize){
+        initialize();
+      });
+    }
+  );
+  </script>
+</body>
+</html>
