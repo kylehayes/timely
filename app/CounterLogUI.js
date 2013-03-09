@@ -18,12 +18,12 @@ define(
       // custom functions
       this.onCounterMark = function(event, data) {
         console.log(data);
-        var logStr = '<li>' + data.time;
+        var logStr = '<tr><td>' + data.time;
         if(data.message !== null) {
           logStr += " -- " + data.message;
         }
-        logStr += "</li>";
-        this.select('logListContainer').append(logStr);
+        logStr += "</td><td><input type=\"text\" placeholder=\"Add a note\" /></td></tr>";
+        this.select('logListContainer').select(':first').append(logStr);
         this.node.scrollTop = this.node.scrollHeight;
       };
 

@@ -3,66 +3,98 @@
 <head>
   <title>Timely</title>
   <link rel="stylesheet" href="components/bootstrap/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/darkstrap.css" />
   <script src='components/jquery/jquery.js'></script>
   <script src='components/es5-shim/es5-shim.js'></script>
   <script src='components/es5-shim/es5-sham.js'></script>
   <script data-main="requireMain.js" src='components/requirejs/require.js'></script>
   <style type="text/css">
-  .container-fluid {
-    margin: 10px;
-    border: 1px solid gray;
-    padding: 0;
+  /*body {
+    background-color: #4a4a4a;
   }
 
-  #counterLogUI {
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    overflow: scroll;
-  }
-
-  #counterUI {
-    border-right: 1px solid gray;
-    margin: 0px;
-  }
-
-  #counterUI .counter-wrapper {
-    margin: 10px;
-  }
-
-  #notesUI {
-    border-left: 1px solid gray;
-    margin: 0px;
-  }
+  body > .container {
+    background-color: #2b2b2b;
+  }*/
 
   #clock {
-    font-size: 45px;
+    font-size: 100px;
     font-family: 'Arial Black';
-    line-height: 45px;
+    line-height: 100px;
+    text-align: center;
+  }
+
+  #counterUI .counter-row {
+    
+    height: 112px;
+    color: #fff;
+    position: relative;
+  }
+
+  #counterUI .counter-row .span12 {
+    background: #000;
+  }
+
+  #counterUI .glass {
+    background: url(images/glass.png) repeat-x;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    position: absolute;
+    height: 112px;
+    width: 938px;
+  }
+
+  .well.counter-buttons {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -mozilla-border-top-left-radius: 0px;
+    -mozilla-border-top-right-radius: 0px;
   }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row-fluid">
+  <div class="container">
+        <div id="counterUI">
+          <div class="counter-row row">
+            
+            <div class="span12">
+              <div class="glass">&nbsp;</div>
+              <div id="clock">00:00:00</div>
+            </div>
+          </div><!-- row -->
 
-      <div class="span3">
-        <div id="counterLogUI" class="row-fluid">
-          <ol id="counterLogListContainer"></ol>
+          <div class="row">
+            <div class="span12">
+              <div class="counter-buttons well">
+                <button id="startCounter" class="btn btn-large btn-primary">Start Day</button>
+                <button id="stopCounter" class="btn btn-large btn-danger" style="display: none">Stop Day</button>
+                <button id="markCounter" class="btn btn-large">Mark</button>
+              </div>
+            </div>
+          </div><!-- row -->
+
+        </div> <!-- counterUI -->
+
+    <div class="row">
+      <div class="span12">
+        <div id="counterLogUI" class="well">
+          <table id="counterLogListContainer" class="table table-striped">
+            <tr>
+              <th>Time</th>
+              <th>Note</th>
+            </tr>
+          </table>
         </div>
-        <div id="counterUI" class="row-fluid">
-          <div class="counter-wrapper">
-            <div id="clock">00:00:00</div>
-            <button id="startCounter" class="btn btn-large btn-primary">Start</button>
-            <button id="stopCounter" class="btn btn-large btn-danger" style="display: none">Stop</button>
-            <button id="markCounter" class="btn btn-large">Mark</button>
-          </div>
-        </div>
-      </div><!-- end span4 -->
-      <div id="notesUI" class="span9">
-        <div class="row-fluid"><p>notes</p></div>
+      </div><!-- end span12 -->
+    </div><!-- end row -->
+    
+    <div class="row">
+      <div id="notesUI" class="span12">
+        <p>notes</p>
       </div><!-- end span8 -->
-
-    </div>
+    </div><!-- end row -->
   </div>
   <script>
   require(

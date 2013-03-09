@@ -31,7 +31,7 @@ define(
       };
 
       this.onStopButtonClick = function(event) {
-        this.trigger(document, "counter#stop");
+        this.trigger(document, "counter#pause");
         this.mark("Stop");
         this.$stopButton.hide();
         this.$startButton.show();
