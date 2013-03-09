@@ -22,7 +22,7 @@ define(
       };
 
       this.start = function() {
-        this._startTime = new Date(1362763455839) //new Date();
+        this._startTime = new Date();
         var that = this;
         this._intervalTimer = window.setInterval(function() {
           var diff = Math.round(((new Date()).getTime() - that._startTime.getTime()))
@@ -49,6 +49,8 @@ define(
       this.pause = function() {
         //this.trigger(document, 'HighResolutionTimer#pause');
         console.log('counter paused');
+        this._startTime = null;
+        window.clearInterval(this._intervalTimer);
       };
 
       this.onCounterChange = function() {
